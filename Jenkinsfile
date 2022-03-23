@@ -53,6 +53,7 @@ node{
 	  withCredentials(([string(credentialsId: 'telegramToken', variable: 'TOKEN'),
       string(credentialsId: 'telegramChatId', variable: 'CHAT_ID')])) {
       sh 'curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d "chat_id=${CHAT_ID}"  -d text="[✅] Build successfully 😊"'
+		  sh 'exit 1'
 	  }
 	  } catch (err) {
         echo err.getMessage()
