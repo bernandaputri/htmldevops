@@ -48,11 +48,20 @@ node{
   
   stage('Run Container'){
     //sh "docker stop ${dockerPreviousContainer}"
-    sh "docker run -p 8083:80 -d --name ${dockerContainerName} ${dockerImageName}"
+	  try {
+	  sh "docker run -p 8083:80 -d --name ${dockerContainerName} ${dockerImageName}"
 	  withCredentials(([string(credentialsId: 'telegramToken', variable: 'TOKEN'),
       string(credentialsId: 'telegramChatId', variable: 'CHAT_ID')])) {
       sh 'curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d "chat_id=${CHAT_ID}"  -d text="[✅] Build successfully 😊"'
       }
+	  } catch (err) {
+        echo err.getMessage()
+        withCredentials(([string(credentialsId: 'telegramToken', variable: 'TOKEN'),
+      string(credentialsId: 'telegramChatId', variable: 'CHAT_ID')])) {
+        sh 'curl -s -X POST https://api.telegram.org/bot${TOKEN}/sendMessage -d "chat_id=${CHAT_ID}"  -d text="[❌] Failed to build 😱"'
+        sh 'exit 1'
+      }     
+     }     
   }
 }
 
