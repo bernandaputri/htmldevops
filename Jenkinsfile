@@ -10,7 +10,7 @@ node{
 	stage('SCM'){
 		try {
 			echo 'checkout from git'
-			git url: 'https://github.com/SamanthaMeliora/HTMLtest.git', branch: 'master'
+			git url: 'https://github.com/bernandaputri/htmldevops.git', branch: 'master'
 		} catch(err) {
 	        	throw err
       		}
