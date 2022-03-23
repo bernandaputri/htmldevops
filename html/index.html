@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="GitLab Pages">
+    <title>Sticky Notes | HAI MP 032</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="title">
+      <h1>Sticky Notes</h1>
+      <p>make your life easier...</p>
+  </div>
+  <div class="form">
+    <form action="javascript:void(0);" method="POST" onsubmit="app.Add()"> 
+    <input type="text" id="add-todo" placeholder="Thing To-Do">
+    <input type="submit" value="Add" class="btn btn-primary">
+    </form>
+    <p>You Have: </p>
+    <p id="counter"></p>
+
+    <table>
+    <tr class="to-do">
+        <th><h3>To-Do:</h3></th>
+    </tr>
+        <tbody id="tasks">
+        </tbody>
+    </table>
+</div>
+    <div id="edit-box" role="aria-hidden">
+      <form action="javascript:void(0);" method="POST" id="save-edit">
+        <input type="text" id="edit-todo">
+        <input type="submit" value="Save" class="btn btn-success"/> <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+      </form>
+    </div>
+    
+
+    <section>
+      <img src="stars.png" id="stars">
+      <img src="moon.png" id="moon">
+      <img src="mountains_behind.png" id="mountains_behind">
+       <img src="mountains_front.png" id="mountains_front">
+     </section>
+     
+     <script src="script.js"></script>
+  </body>
+</html>

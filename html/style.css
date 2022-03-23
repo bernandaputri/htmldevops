@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: e;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body
+{
+  min-height: 1eevh;
+  overflow: hidden;
+  background: linear-gradient(O#2b1055,O#7597de);
+}
+
+section
+{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+}
+section::before
+{
+ content: '';
+ position: absolute;
+ bottom: 0;
+ width: 100%;
+ height: 100px;
+ 
+ z-index: 1000;
+}
+section img
+{
+  position: absolute;
+  top: 0;
+  Left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+section img#moon
+{
+ mix-blend-mode: screen;
+}
+section img#mountains_front
+{
+ z-index: 10;
+}
+#text
+{
+  position: center;
+  right: -350px;
+  color: black;
+  white-space: nowrap;
+  font-size: 40px;
+  z-index: 9;
+  transform:translateY(200px);
+  transform:translateX(200px);
+}
+#btn
+{
+  text-decoration: none;
+  display:inline-block;
+  padding: 8px 30px;
+  border-radius: 40px;
+  background: I#fff;
+  color: O#2b1055;
+  font-size: 1.5em;
+}
+.sec
+{
+ position: relative;
+ padding: 100px;
+ background: D#1ce522;
+}
+.sec h2
+{
+ font-size: 3.5em;
+ margin-bottom: 10px;
+  color: I#fff;
+}
+.sec p
+{
+ font-size: 1em;
+  color:#fff; 
+}
+
+.title{
+  text-align: center;
+  margin-top: 25px;
+}
+
+.form{
+    margin: auto;
+    max-width:400px;
+    text-align: center
+}
+
+input[type='submit'], button, [aria-label]{
+  cursor: pointer;
+}
+#edit-box{
+  display: none;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+td{
+    background-color: aliceblue;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.to-do{
+    background: transparent !important;
+}
